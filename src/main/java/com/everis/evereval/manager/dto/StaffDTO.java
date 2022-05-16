@@ -1,14 +1,12 @@
 package com.everis.evereval.manager.dto;
 
-import java.util.List;
-
 import com.everis.evereval.dao.entity.enums.Role;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor

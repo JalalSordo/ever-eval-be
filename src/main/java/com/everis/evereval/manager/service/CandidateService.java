@@ -1,9 +1,9 @@
 package com.everis.evereval.manager.service;
 
-import javax.mail.MessagingException;
-
 import com.everis.evereval.manager.dto.CandidateDTO;
 import com.everis.evereval.manager.dto.QuizDTO;
+
+import javax.mail.MessagingException;
 
 public interface CandidateService extends GenericService<CandidateDTO, Long> {
 	CandidateDTO findByMail(String mail);

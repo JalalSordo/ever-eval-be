@@ -1,10 +1,9 @@
 package com.everis.evereval.dao.repository;
 
 
-import org.springframework.data.repository.CrudRepository;
-
 import com.everis.evereval.dao.entity.Candidate;
 import com.everis.evereval.dao.entity.Quiz;
+import org.springframework.data.repository.CrudRepository;
 
 public interface CandidateRepository  extends CrudRepository<Candidate, Long>{
 	Candidate findByMail(String mail);

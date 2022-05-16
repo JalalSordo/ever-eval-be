@@ -1,12 +1,11 @@
 package com.everis.evereval.manager.service.impl;
 
-import java.util.Optional;
-
+import com.everis.evereval.manager.service.GenericService;
+import com.everis.evereval.manager.transformer.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 
-import com.everis.evereval.manager.service.GenericService;
-import com.everis.evereval.manager.transformer.Transformer;
+import java.util.Optional;
 
 public class GenericServiceImpl<Entity, DTO, Key> implements GenericService<DTO, Key> {
 

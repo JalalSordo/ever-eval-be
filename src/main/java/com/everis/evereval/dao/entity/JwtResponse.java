@@ -1,12 +1,9 @@
 package com.everis.evereval.dao.entity;
 
 
-import java.io.Serializable;
-import java.util.Collection;
-
-import org.springframework.security.core.GrantedAuthority;
-
 import lombok.Data;
+
+import java.io.Serializable;
 
 @Data
 public class JwtResponse implements Serializable {

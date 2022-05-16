@@ -1,10 +1,10 @@
 package com.everis.evereval.manager.service;
 
-import javax.mail.MessagingException;
-
 import com.everis.evereval.manager.dto.CandidateDTO;
 import com.everis.evereval.manager.dto.QuizDTO;
 import com.everis.evereval.manager.dto.StaffDTO;
+
+import javax.mail.MessagingException;
 
 public interface StaffService extends GenericService<StaffDTO, Long> {
 

@@ -1,7 +1,12 @@
 package com.everis.evereval.web.controller;
 
-import javax.mail.MessagingException;
-
+import com.everis.evereval.mailsender.MailConfig;
+import com.everis.evereval.manager.dto.CandidateDTO;
+import com.everis.evereval.manager.dto.QuizDTO;
+import com.everis.evereval.manager.service.CandidateService;
+import com.everis.evereval.manager.service.QuizService;
+import com.everis.evereval.manager.service.StaffService;
+import com.everis.evereval.manager.service.impl.CandidateServiceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,13 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.everis.evereval.mailsender.MailConfig;
-import com.everis.evereval.manager.dto.CandidateDTO;
-import com.everis.evereval.manager.dto.QuizDTO;
-import com.everis.evereval.manager.service.CandidateService;
-import com.everis.evereval.manager.service.QuizService;
-import com.everis.evereval.manager.service.StaffService;
-import com.everis.evereval.manager.service.impl.CandidateServiceImp;
+import javax.mail.MessagingException;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController

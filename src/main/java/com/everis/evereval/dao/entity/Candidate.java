@@ -1,6 +1,10 @@
 package com.everis.evereval.dao.entity;
 
-import java.util.Date;
+import com.everis.evereval.dao.entity.enums.Level;
+import com.everis.evereval.dao.entity.enums.Techno;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -10,13 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-
-import com.everis.evereval.dao.entity.enums.Level;
-import com.everis.evereval.dao.entity.enums.Techno;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.Date;
 
 @Data
 @AllArgsConstructor

@@ -1,10 +1,5 @@
 package com.everis.evereval.manager.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.everis.evereval.dao.entity.Question;
 import com.everis.evereval.dao.entity.enums.Level;
 import com.everis.evereval.dao.entity.enums.Techno;
@@ -13,6 +8,10 @@ import com.everis.evereval.manager.dto.QuestionDTO;
 import com.everis.evereval.manager.service.QuestionService;
 import com.everis.evereval.manager.transformer.QuestionTransformer;
 import com.everis.evereval.manager.transformer.Transformer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class QuestionServiceImpl extends GenericServiceImpl<Question, QuestionDTO, Long> implements QuestionService {

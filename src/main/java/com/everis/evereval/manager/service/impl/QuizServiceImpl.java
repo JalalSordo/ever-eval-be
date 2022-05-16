@@ -1,8 +1,5 @@
 package com.everis.evereval.manager.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.everis.evereval.dao.entity.Quiz;
 import com.everis.evereval.dao.entity.enums.Type;
 import com.everis.evereval.dao.repository.QuizRepository;
@@ -11,6 +8,8 @@ import com.everis.evereval.manager.dto.QuizQuestionDTO;
 import com.everis.evereval.manager.service.QuizService;
 import com.everis.evereval.manager.transformer.QuizTransformer;
 import com.everis.evereval.manager.transformer.Transformer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class QuizServiceImpl extends GenericServiceImpl<Quiz, QuizDTO, Long> implements QuizService {

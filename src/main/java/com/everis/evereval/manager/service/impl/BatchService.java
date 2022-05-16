@@ -1,13 +1,5 @@
 package com.everis.evereval.manager.service.impl;
 
-import java.util.List;
-
-import javax.mail.MessagingException;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.stereotype.Component;
-
 import com.everis.evereval.dao.entity.Candidate;
 import com.everis.evereval.dao.entity.Quiz;
 import com.everis.evereval.dao.entity.Staff;
@@ -16,6 +8,12 @@ import com.everis.evereval.dao.repository.CandidateRepository;
 import com.everis.evereval.dao.repository.QuizRepository;
 import com.everis.evereval.dao.repository.StaffRepository;
 import com.everis.evereval.mailsender.MailConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+
+import javax.mail.MessagingException;
+import java.util.List;
 
 @Component
 public class BatchService {

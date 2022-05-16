@@ -1,14 +1,13 @@
 package com.everis.evereval.manager.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.everis.evereval.dao.entity.Answer;
 import com.everis.evereval.dao.repository.AnswerRepository;
 import com.everis.evereval.manager.dto.AnswerDTO;
 import com.everis.evereval.manager.service.AnswerService;
 import com.everis.evereval.manager.transformer.AnswerTransformer;
 import com.everis.evereval.manager.transformer.Transformer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 @Service
 public class AnswerServiceImpl extends GenericServiceImpl<Answer, AnswerDTO, Long> implements AnswerService {

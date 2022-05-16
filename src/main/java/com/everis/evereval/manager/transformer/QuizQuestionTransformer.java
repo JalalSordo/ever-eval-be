@@ -1,10 +1,9 @@
 package com.everis.evereval.manager.transformer;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.everis.evereval.dao.entity.QuizQuestion;
 import com.everis.evereval.manager.dto.QuizQuestionDTO;
 import com.everis.evereval.manager.service.QuestionService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class QuizQuestionTransformer extends Transformer<QuizQuestion, QuizQuestionDTO> {
 

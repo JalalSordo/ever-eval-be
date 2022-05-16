@@ -1,16 +1,5 @@
 package com.everis.evereval.manager.service.impl;
 
-import java.time.temporal.ChronoUnit;
-import java.util.Calendar;
-import java.util.List;
-import java.util.UUID;
-
-import javax.mail.MessagingException;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
-
 import com.everis.evereval.dao.entity.Candidate;
 import com.everis.evereval.dao.entity.Quiz;
 import com.everis.evereval.dao.entity.enums.Type;
@@ -26,6 +15,15 @@ import com.everis.evereval.manager.service.CandidateService;
 import com.everis.evereval.manager.transformer.CandidateTransformer;
 import com.everis.evereval.manager.transformer.QuizTransformer;
 import com.everis.evereval.manager.transformer.Transformer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import javax.mail.MessagingException;
+import java.time.temporal.ChronoUnit;
+import java.util.Calendar;
+import java.util.List;
+import java.util.UUID;
 
 @Service
 public class CandidateServiceImp extends GenericServiceImpl<Candidate, CandidateDTO, Long> implements CandidateService {

@@ -1,12 +1,5 @@
 package com.everis.evereval.manager.service.impl;
 
-import java.util.List;
-
-import javax.mail.MessagingException;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.everis.evereval.dao.entity.Staff;
 import com.everis.evereval.dao.entity.enums.Role;
 import com.everis.evereval.dao.repository.StaffRepository;
@@ -17,6 +10,11 @@ import com.everis.evereval.manager.dto.StaffDTO;
 import com.everis.evereval.manager.service.StaffService;
 import com.everis.evereval.manager.transformer.StaffTransformer;
 import com.everis.evereval.manager.transformer.Transformer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.mail.MessagingException;
+import java.util.List;
 
 @Service
 public class StaffServiceImpl extends GenericServiceImpl<Staff, StaffDTO, Long> implements StaffService {
