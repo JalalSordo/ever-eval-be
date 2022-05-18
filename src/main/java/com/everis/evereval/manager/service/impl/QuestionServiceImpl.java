@@ -16,21 +16,21 @@ import java.util.List;
 @Service
 public class QuestionServiceImpl extends GenericServiceImpl<Question, QuestionDTO, Long> implements QuestionService {
 
-	private static Transformer<Question, QuestionDTO> t = new QuestionTransformer();
-	@Autowired
-	private QuestionRepository questionRepository;
+    private static Transformer<Question, QuestionDTO> t = new QuestionTransformer();
+    @Autowired
+    private QuestionRepository questionRepository;
 
-	public QuestionServiceImpl() {
-		super(t);
-	}
+    public QuestionServiceImpl() {
+        super(t);
+    }
 
-	@Override
-	public List<QuestionDTO> findByLevelAndTechno(Level level, Techno techno) {
-		return t.toDTOList(questionRepository.findByLevelAndTechno(level, techno));
-	}
+    @Override
+    public List<QuestionDTO> findByLevelAndTechno(Level level, Techno techno) {
+        return t.toDTOList(questionRepository.findByLevelAndTechno(level, techno));
+    }
 
-	@Override
-	public QuestionDTO findByContent(String content) {
-		return t.toDTO(questionRepository.findByContent(content));
-	}
+    @Override
+    public QuestionDTO findByContent(String content) {
+        return t.toDTO(questionRepository.findByContent(content));
+    }
 }

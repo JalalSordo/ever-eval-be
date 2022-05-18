@@ -13,15 +13,13 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class StaffDTO {
-	private Long id;
-	private String firstName;
-	private String lastName;
-	private String mail;
-	private Role role;
-	private String password;
+    List<QuizDTO> quizes;
+    private Long id;
+    private String firstName;
+    private String lastName;
+    private String mail;
+    private Role role;
+    private String password;
 
-	List<QuizDTO> quizes;
 
-
-	
 }

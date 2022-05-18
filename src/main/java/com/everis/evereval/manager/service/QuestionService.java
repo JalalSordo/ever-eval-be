@@ -7,8 +7,8 @@ import com.everis.evereval.manager.dto.QuestionDTO;
 import java.util.List;
 
 public interface QuestionService extends GenericService<QuestionDTO, Long> {
-	List<QuestionDTO> findByLevelAndTechno(Level level, Techno techno);
+    List<QuestionDTO> findByLevelAndTechno(Level level, Techno techno);
 
-	QuestionDTO findByContent(String content);
+    QuestionDTO findByContent(String content);
 
 }

@@ -15,12 +15,12 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class QuizDTO {
-	private Long id;
-	private Level level;
-	private Techno techno;
+    private Long id;
+    private Level level;
+    private Techno techno;
 
-	private List<QuizQuestionDTO> quizQuestions = new ArrayList<>();
-	private boolean done;
-	private boolean evaluated;
-	private int totalQuestion;
+    private List<QuizQuestionDTO> quizQuestions = new ArrayList<>();
+    private boolean done;
+    private boolean evaluated;
+    private int totalQuestion;
 }

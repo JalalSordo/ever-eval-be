@@ -3,25 +3,25 @@ package com.everis.evereval.manager.service;
 import java.util.Optional;
 
 public interface GenericService<DTO, Key> {
-	long count();
+    long count();
 
-	void delete(DTO dto);
+    void delete(DTO dto);
 
-	void deleteAll(Iterable<DTO> dtoList);
+    void deleteAll(Iterable<DTO> dtoList);
 
-	void deleteAll();
+    void deleteAll();
 
-	void deleteById(Key id);
+    void deleteById(Key id);
 
-	boolean existsById(Key id);
+    boolean existsById(Key id);
 
-	Iterable<DTO> findAll();
+    Iterable<DTO> findAll();
 
-	Iterable<DTO> findAllById(Iterable<Key> ids);
+    Iterable<DTO> findAllById(Iterable<Key> ids);
 
-	Optional<DTO> findById(Key id);
+    Optional<DTO> findById(Key id);
 
-	DTO save(DTO dto);
+    DTO save(DTO dto);
 
-	Iterable<DTO> saveAll(Iterable<DTO> dtoList);
+    Iterable<DTO> saveAll(Iterable<DTO> dtoList);
 }

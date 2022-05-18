@@ -12,11 +12,11 @@ import javax.mail.internet.MimeMessage;
 
 @Service
 public class MailConfig {
-	
+
 	@Autowired
 	private JavaMailSender javaMailSender;
-	
-	@Value("${spring.mail.username}") 
+
+	@Value("${spring.mail.username}")
 	private String mailFrom;
 
 	public void sendEmail(String to, String subject, String content) throws MessagingException {

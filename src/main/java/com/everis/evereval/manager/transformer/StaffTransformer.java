@@ -20,8 +20,8 @@ public class StaffTransformer extends Transformer<Staff, StaffDTO> {
 		if (entity == null) {
 			return null;
 		}
-		return new StaffDTO(entity.getId(), entity.getFirstName(), entity.getLastName(), entity.getMail(),
-				entity.getRole(), entity.getPassword(),quizTransformer.toDTOList(entity.getQuizes()));
+		return new StaffDTO(quizTransformer.toDTOList(entity.getQuizes()), entity.getId(), entity.getFirstName(), entity.getLastName(),
+                entity.getMail(), entity.getRole(), entity.getPassword());
 	}
 
 }

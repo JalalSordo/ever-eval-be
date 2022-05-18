@@ -16,9 +16,9 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 @Entity
 public class Email {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String subject;
-	private String messageText;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String subject;
+    private String messageText;
 }

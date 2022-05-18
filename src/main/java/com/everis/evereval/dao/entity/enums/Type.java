@@ -1,5 +1,5 @@
 package com.everis.evereval.dao.entity.enums;
 
 public enum Type {
-	RADIO, CHECKBOX, TEXTFIELD, TEXTAREA; 
+    RADIO, CHECKBOX, TEXTFIELD, TEXTAREA;
 }

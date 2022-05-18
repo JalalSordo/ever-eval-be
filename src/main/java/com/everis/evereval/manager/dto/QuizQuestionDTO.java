@@ -17,17 +17,17 @@ import java.util.List;
 @EqualsAndHashCode
 public class QuizQuestionDTO {
 
-	private Long id;
-	
-	private String content;
-	private Level level;
-	private Techno techno;
-	private Type type;
-	private int countdown;
-	private double score;
+    private Long id;
 
-	private List<ProposedResponseDTO> proposedResponses = new ArrayList<>();
-	
-	private List<AnswerDTO> answers = new ArrayList<>();
+    private String content;
+    private Level level;
+    private Techno techno;
+    private Type type;
+    private int countdown;
+    private double score;
+
+    private List<ProposedResponseDTO> proposedResponses = new ArrayList<>();
+
+    private List<AnswerDTO> answers = new ArrayList<>();
 
 }

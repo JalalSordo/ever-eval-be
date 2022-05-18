@@ -16,12 +16,12 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 @Entity
 public class ProposedResponse {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String content;
-	private boolean state;
-	private double score;
+    private String content;
+    private boolean state;
+    private double score;
 
 }

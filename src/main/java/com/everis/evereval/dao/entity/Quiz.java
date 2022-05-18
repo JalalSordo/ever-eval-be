@@ -25,19 +25,19 @@ import java.util.List;
 @Entity
 public class Quiz {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Enumerated(EnumType.STRING)
-	private Level level;
-	@Enumerated(EnumType.STRING)
-	private Techno techno;
+    @Enumerated(EnumType.STRING)
+    private Level level;
+    @Enumerated(EnumType.STRING)
+    private Techno techno;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<QuizQuestion> quizQuestions = new ArrayList<>();
-	private boolean done;
-	private boolean evaluated;
-	private int totalQuestion;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<QuizQuestion> quizQuestions = new ArrayList<>();
+    private boolean done;
+    private boolean evaluated;
+    private int totalQuestion;
 
 }

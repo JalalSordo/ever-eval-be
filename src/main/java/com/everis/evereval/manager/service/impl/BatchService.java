@@ -18,61 +18,60 @@ import java.util.List;
 @Component
 public class BatchService {
 
-	@Autowired
-	private QuizRepository quizService;
+    @Autowired
+    private QuizRepository quizService;
 
-	@Autowired
-	private StaffRepository staffRepo;
+    @Autowired
+    private StaffRepository staffRepo;
 
-	@Autowired
-	private CandidateRepository candidateService;
+    @Autowired
+    private CandidateRepository candidateService;
 
-	@Autowired
-	private MailConfig mailConfig;
+    @Autowired
+    private MailConfig mailConfig;
 
-	//@Scheduled(fixedRate = 50000)
-	
-	// this method Fires at 10:15 AM every day
-	@Scheduled(cron = "0 15 10 * * ? ")
-	public void sendEvaluationMailToEvaluators() throws MessagingException {
+    //@Scheduled(fixedRate = 50000)
 
-		Iterable<Quiz> quize = quizService.findAllByDoneTrueAndEvaluatedFalse();
+    // this method Fires at 10:15 AM every day
+    @Scheduled(cron = "0 15 10 * * ? ")
+    public void sendEvaluationMailToEvaluators() throws MessagingException {
 
-		List<Staff> evaluators = staffRepo.findByRole(Role.EVALUATOR);
+        Iterable<Quiz> quize = quizService.findAllByDoneTrueAndEvaluatedFalse();
 
-		Candidate candidate;
+        List<Staff> evaluators = staffRepo.findByRole(Role.EVALUATOR);
 
-		String subject = "Everis Quiz Evaluation";
-		
-		String content = "Hi, \n \n some quizzes in EverEval are done and they  must be evaluated.";
+        Candidate candidate;
 
-		System.out.println("//////////////////");
-		int cpt  = 0;
-		for (Quiz quiz : quize) {
+        String subject = "Everis Quiz Evaluation";
 
-			candidate = candidateService.findByQuiz(quiz);
+        String content = "Hi, \n \n some quizzes in EverEval are done and they  must be evaluated.";
 
-			String emailBody = "\n\n The quiz description:\n Candidate: "
-					+ candidate.getName() + "\n Technologie: " + quiz.getTechno() + "\n Level: " + quiz.getLevel()
-					+ "\n Number of questions: " + quiz.getTotalQuestion();
+        System.out.println("//////////////////");
+        int cpt = 0;
+        for (Quiz quiz : quize) {
 
-			content += emailBody;
-			cpt++;
-		}
-		
-		content += "\n\n Kind regards,\n EverEval.";
-		if(cpt>0)
-		{
-			for (Staff staff : evaluators) {
+            candidate = candidateService.findByQuiz(quiz);
 
-				mailConfig.sendEmail(staff.getMail(), subject, content);
-				System.out.println("email sent Seccesfully");
-			}
-		}
-		
-		
-		System.out.println("//////////////////");
+            String emailBody = "\n\n The quiz description:\n Candidate: "
+                    + candidate.getName() + "\n Technologie: " + quiz.getTechno() + "\n Level: " + quiz.getLevel()
+                    + "\n Number of questions: " + quiz.getTotalQuestion();
 
-	}
+            content += emailBody;
+            cpt++;
+        }
+
+        content += "\n\n Kind regards,\n EverEval.";
+        if (cpt > 0) {
+            for (Staff staff : evaluators) {
+
+                mailConfig.sendEmail(staff.getMail(), subject, content);
+                System.out.println("email sent Seccesfully");
+            }
+        }
+
+
+        System.out.println("//////////////////");
+
+    }
 
 }

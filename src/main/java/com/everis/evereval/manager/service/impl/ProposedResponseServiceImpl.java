@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ProposedResponseServiceImpl extends GenericServiceImpl<ProposedResponse, ProposedResponseDTO, Long>
-		implements ProposedResponseService {
+        implements ProposedResponseService {
 
-	private static Transformer<ProposedResponse, ProposedResponseDTO> t = new ProposedResponseTransformer();
+    private static Transformer<ProposedResponse, ProposedResponseDTO> t = new ProposedResponseTransformer();
 
-	public ProposedResponseServiceImpl() {
+    public ProposedResponseServiceImpl() {
 
-		super(t);
+        super(t);
 
-	}
+    }
 
 }

@@ -16,11 +16,11 @@ import javax.persistence.Id;
 @EqualsAndHashCode
 @Entity
 public class Answer {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private double score;
-	
-	private String content;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private double score;
+
+    private String content;
 }

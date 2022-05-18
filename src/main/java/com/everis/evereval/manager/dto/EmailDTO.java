@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @EqualsAndHashCode
 public class EmailDTO {
-	private Long id;
-	private String subject;
-	private String messageText;
+    private Long id;
+    private String subject;
+    private String messageText;
 
 }

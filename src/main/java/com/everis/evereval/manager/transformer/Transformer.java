@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Transformer<Entity, DTO> {
-	
+
 	public abstract Entity toEntity(DTO dto);
 
 	public abstract DTO toDTO(Entity entity);

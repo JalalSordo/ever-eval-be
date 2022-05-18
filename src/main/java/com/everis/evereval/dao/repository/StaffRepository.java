@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface StaffRepository extends JpaRepository<Staff, Long> {
 
-	Staff findByMailAndPassword(String mail, String password);
+    Staff findByMailAndPassword(String mail, String password);
 
-	Staff findByMail(String mail);
+    Staff findByMail(String mail);
 
-	List<Staff> findByRole(Role role);
+    List<Staff> findByRole(Role role);
 
 }

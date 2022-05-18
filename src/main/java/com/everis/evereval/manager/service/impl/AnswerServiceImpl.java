@@ -12,17 +12,17 @@ import org.springframework.stereotype.Service;
 @Service
 public class AnswerServiceImpl extends GenericServiceImpl<Answer, AnswerDTO, Long> implements AnswerService {
 
-	private static Transformer<Answer, AnswerDTO> t = new AnswerTransformer();
-	@Autowired
-	private AnswerRepository answerRepository;
+    private static Transformer<Answer, AnswerDTO> t = new AnswerTransformer();
+    @Autowired
+    private AnswerRepository answerRepository;
 
-	public AnswerServiceImpl() {
-		super(t);
-	}
+    public AnswerServiceImpl() {
+        super(t);
+    }
 
-	@Override
-	public Iterable<AnswerDTO> findAllByScore(double score) {
-		return t.toDTOList(answerRepository.findAllByScore(score));
-	}
+    @Override
+    public Iterable<AnswerDTO> findAllByScore(double score) {
+        return t.toDTOList(answerRepository.findAllByScore(score));
+    }
 
 }

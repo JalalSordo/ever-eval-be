@@ -9,12 +9,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class QuizQuestionServiceImpl extends GenericServiceImpl<QuizQuestion, QuizQuestionDTO, Long>
-		implements QuizQuestionService {
+        implements QuizQuestionService {
 
-	private static Transformer<QuizQuestion, QuizQuestionDTO> t = new QuizQuestionTransformer();
+    private static Transformer<QuizQuestion, QuizQuestionDTO> t = new QuizQuestionTransformer();
 
-	public QuizQuestionServiceImpl() {
-		super(t);
-	}
+    public QuizQuestionServiceImpl() {
+        super(t);
+    }
 
 }

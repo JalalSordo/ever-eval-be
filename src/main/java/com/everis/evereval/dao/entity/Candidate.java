@@ -21,22 +21,20 @@ import java.util.Date;
 @NoArgsConstructor
 @Entity
 public class Candidate {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	private String name;
-	private String mail;
-	@Enumerated(EnumType.STRING)
-	private Level level;
-	@Enumerated(EnumType.STRING)
-	private Techno techno;
-
-	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
-	Quiz quiz;
-
-	private String token;
-	private Date tokenExpirationDate;
-	private double score;
-	private boolean convoked;
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    Quiz quiz;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String name;
+    private String mail;
+    @Enumerated(EnumType.STRING)
+    private Level level;
+    @Enumerated(EnumType.STRING)
+    private Techno techno;
+    private String token;
+    private Date tokenExpirationDate;
+    private double score;
+    private boolean convoked;
 
 }

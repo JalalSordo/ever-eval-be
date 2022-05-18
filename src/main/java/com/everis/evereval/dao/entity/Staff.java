@@ -21,35 +21,30 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Staff {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String firstName;
-	
-	private String lastName;
-	
-	private String mail;
-	
-	@Enumerated(EnumType.STRING)
-	private Role role;
-	
-	private String password;
 
-	
-	//private String picture;
-	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String firstName;
+
+    private String lastName;
+
+    private String mail;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    private String password;
+
+
+    //private String picture;
+
 //	private String token;
 
 
-	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	private List<Quiz> quizes = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<Quiz> quizes = new ArrayList<>();
 
-
-	
-	
-	
-	
 
 }

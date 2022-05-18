@@ -19,63 +19,61 @@ import java.util.List;
 @Service
 public class StaffServiceImpl extends GenericServiceImpl<Staff, StaffDTO, Long> implements StaffService {
 
-	@Autowired
-	private StaffRepository staffRepository;
+    private static Transformer<Staff, StaffDTO> t = new StaffTransformer();
+    @Autowired
+    private StaffRepository staffRepository;
+    @Autowired
+    private MailConfig mailConfig;
 
-	@Autowired
-	private MailConfig mailConfig;
+    public StaffServiceImpl() {
+        super(t);
+    }
 
-	private static Transformer<Staff, StaffDTO> t = new StaffTransformer();
+    @Override
+    public StaffDTO findByMailAndPassword(String mail, String password) {
+        return t.toDTO(staffRepository.findByMailAndPassword(mail, password));
+    }
 
-	public StaffServiceImpl() {
-		super(t);
-	}
+    @Override
+    public StaffDTO findByMail(String mail) {
+        return t.toDTO(staffRepository.findByMail(mail));
+    }
 
-	@Override
-	public StaffDTO findByMailAndPassword(String mail, String password) {
-		return t.toDTO(staffRepository.findByMailAndPassword(mail, password));
-	}
+    @Override
+    public void sendEvaluationMailToEvaluator(QuizDTO quizDTO, String candidateName) throws MessagingException {
 
-	@Override
-	public StaffDTO findByMail(String mail) {
-		return t.toDTO(staffRepository.findByMail(mail));
-	}
+        List<Staff> evaluators = staffRepository.findByRole(Role.EVALUATOR);
 
-	@Override
-	public void sendEvaluationMailToEvaluator(QuizDTO quizDTO, String candidateName) throws MessagingException {
+        String subject = "Everis Quiz Evaluation";
 
-		List<Staff> evaluators = staffRepository.findByRole(Role.EVALUATOR);
+        String content = "Hi, \n\nA quiz in EverEval is done and it must be evaluated.\n\n The quiz description:\n Candidate: "
+                + candidateName + "\n Technologie: " + quizDTO.getTechno() + "\n Level: " + quizDTO.getLevel()
+                + "\n Number of questions: " + quizDTO.getTotalQuestion() + "\n\n Kind regards,\n EverEval.";
 
-		String subject = "Everis Quiz Evaluation";
+        for (Staff staff : evaluators) {
 
-		String content = "Hi, \n\nA quiz in EverEval is done and it must be evaluated.\n\n The quiz description:\n Candidate: "
-				+ candidateName + "\n Technologie: " + quizDTO.getTechno() + "\n Level: " + quizDTO.getLevel()
-				+ "\n Number of questions: " + quizDTO.getTotalQuestion() + "\n\n Kind regards,\n EverEval.";
+            mailConfig.sendEmail(staff.getMail(), subject, content);
+        }
 
-		for (Staff staff : evaluators) {
+    }
 
-			mailConfig.sendEmail(staff.getMail(), subject, content);
-		}
+    @Override
+    public void sendScoreMail(QuizDTO quizDTO, CandidateDTO candidate) throws MessagingException {
 
-	}
+        Iterable<Staff> staffes = staffRepository.findAll();
 
-	@Override
-	public void sendScoreMail(QuizDTO quizDTO, CandidateDTO candidate) throws MessagingException {
+        String subject = "Everis Quiz Result";
 
-		Iterable<Staff> staffes = staffRepository.findAll();
+        String content = "Hi, \n\nA quiz in EverEval is evaluated and its score is " + candidate.getScore()
+                + ".\n\n The quiz description:\n Candidate: " + candidate.getName() + "\n Technologie: "
+                + quizDTO.getTechno() + "\n Level: " + quizDTO.getLevel() + "\n Number of questions: "
+                + quizDTO.getTotalQuestion() + "\n\n Kind regards,\n EverEval.";
 
-		String subject = "Everis Quiz Result";
+        for (Staff staff : staffes) {
 
-		String content = "Hi, \n\nA quiz in EverEval is evaluated and its score is " + candidate.getScore()
-				+ ".\n\n The quiz description:\n Candidate: " + candidate.getName() + "\n Technologie: "
-				+ quizDTO.getTechno() + "\n Level: " + quizDTO.getLevel() + "\n Number of questions: "
-				+ quizDTO.getTotalQuestion() + "\n\n Kind regards,\n EverEval.";
+            mailConfig.sendEmail(staff.getMail(), subject, content);
+        }
 
-		for (Staff staff : staffes) {
-
-			mailConfig.sendEmail(staff.getMail(), subject, content);
-		}
-
-	}
+    }
 
 }

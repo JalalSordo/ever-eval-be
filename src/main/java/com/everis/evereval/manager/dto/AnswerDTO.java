@@ -11,9 +11,9 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 public class AnswerDTO {
 
-	private Long id;
+    private Long id;
 
-	private double score;
+    private double score;
 
-	private String content;
+    private String content;
 }

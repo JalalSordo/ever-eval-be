@@ -8,12 +8,12 @@ import javax.mail.MessagingException;
 
 public interface StaffService extends GenericService<StaffDTO, Long> {
 
-	StaffDTO findByMailAndPassword(String mail, String password);
+    StaffDTO findByMailAndPassword(String mail, String password);
 
-	StaffDTO findByMail(String mail);
+    StaffDTO findByMail(String mail);
 
-	void sendEvaluationMailToEvaluator(QuizDTO quizDTO, String candidateName) throws MessagingException;
+    void sendEvaluationMailToEvaluator(QuizDTO quizDTO, String candidateName) throws MessagingException;
 
-	void sendScoreMail(QuizDTO quizDTO, CandidateDTO candidate) throws MessagingException;
+    void sendScoreMail(QuizDTO quizDTO, CandidateDTO candidate) throws MessagingException;
 
 }

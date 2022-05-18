@@ -17,20 +17,20 @@ import java.util.List;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
-	 @Autowired
-	 private StaffRepository userRepository;
-	
-	@Override
-	public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
-		Staff user = userRepository.findByMail(mail);
+    @Autowired
+    private StaffRepository userRepository;
+
+    @Override
+    public UserDetails loadUserByUsername(String mail) throws UsernameNotFoundException {
+        Staff user = userRepository.findByMail(mail);
         if (user == null) {
             throw new UsernameNotFoundException(mail);
         }
-        final List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_"+user.getRole().toString()));
+        final List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole().toString()));
 
         return new org.springframework.security.core.userdetails.User(user.getMail(), user.getPassword(),
-        		authorities);
-    
-	}
+                authorities);
+
+    }
 
 }

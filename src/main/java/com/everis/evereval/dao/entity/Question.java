@@ -25,22 +25,22 @@ import java.util.List;
 @EqualsAndHashCode
 @Entity
 public class Question {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private String content;
+    private String content;
 
-	@Enumerated(EnumType.STRING)
-	private Level level;
-	@Enumerated(EnumType.STRING)
-	private Techno techno;
-	@Enumerated(EnumType.STRING)
-	private Type type;
-	private int countdown;
-	private double score;
+    @Enumerated(EnumType.STRING)
+    private Level level;
+    @Enumerated(EnumType.STRING)
+    private Techno techno;
+    @Enumerated(EnumType.STRING)
+    private Type type;
+    private int countdown;
+    private double score;
 
-	@OneToMany(cascade = { CascadeType.ALL }, orphanRemoval = true)
-	private List<ProposedResponse> proposedResponses = new ArrayList<>();
+    @OneToMany(cascade = {CascadeType.ALL}, orphanRemoval = true)
+    private List<ProposedResponse> proposedResponses = new ArrayList<>();
 
 }

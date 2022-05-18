@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode
 public class ProposedResponseDTO {
 
-	private Long id;
+    private Long id;
 
-	private String content;
+    private String content;
 
-	private boolean state;
-	
-	private double score;
+    private boolean state;
+
+    private double score;
 }
